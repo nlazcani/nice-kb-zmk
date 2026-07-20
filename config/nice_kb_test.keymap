@@ -1,7 +1,12 @@
-/* Sensor-only test keymap: all keys disabled so the bare (floating) matrix
-   produces NO phantom typing — clean cursor-lag measurement. */
+/* Bench test keymap.
+   Wired keys R1xC1/C2/C3 = positions 0,1,2:
+     pos0 (C1) = A
+     pos1 (C2) = B
+     pos2 (C3, P0.09/NFC) = RGB toggle
+   Everything else disabled so the unwired matrix stays silent. */
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
     keymap {
@@ -9,11 +14,11 @@
         default_layer {
             display-name = "Test";
             bindings = <
-   &none &none &none &none &none &none   &none &none &none &none &none &none
-   &none &none &none &none &none &none   &none &none &none &none &none &none
-   &none &none &none &none &none &none   &none &none &none &none &none &none
-   &none &none &none &none &none &none   &none &none &none &none &none &none
-   &none &none &none &none &none &none   &none &none &none &none &none &none
+   &kp A  &kp B  &rgb_ug RGB_TOG  &none &none &none   &none &none &none &none &none &none
+   &none  &none  &none            &none &none &none   &none &none &none &none &none &none
+   &none  &none  &none            &none &none &none   &none &none &none &none &none &none
+   &none  &none  &none            &none &none &none   &none &none &none &none &none &none
+   &none  &none  &none            &none &none &none   &none &none &none &none &none &none
             >;
         };
     };
