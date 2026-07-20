@@ -15,9 +15,9 @@ config ZMK_SPLIT
 
 endif
 
-if SHIELD_NICE_KB_TEST
+if SHIELD_NKBTEST
 
 config ZMK_KEYBOARD_NAME
-	default "nice_kb_test"
+	default "nkbtest"
 
-endif # SHIELD_NICE_KB_TEST
+endif # SHIELD_NKBTEST

@@ -1,0 +1,24 @@
+/* Bench test keymap (shield nkbtest -> loads THIS file, not nice_kb.keymap).
+   Wired keys R1xC1/C2/C3 = positions 0,1,2 = A / B / C.
+   RGB lights on start (ON_START), so no toggle key needed here.
+   Note: an unwired col floats on the bench -> its position auto-repeats
+   (pos1 -> 'b'). That's the floating input, not a firmware bug. */
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        default_layer {
+            display-name = "Test";
+            bindings = <
+   &kp A  &kp B  &kp C  &none &none &none   &none &none &none &none &none &none
+   &none  &none  &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none  &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none  &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none  &none  &none &none &none   &none &none &none &none &none &none
+            >;
+        };
+    };
+};

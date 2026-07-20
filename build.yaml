@@ -17,12 +17,12 @@ include:
     shield: nice_kb_left
     snippet: zmk-usb-logging
     artifact-name: nice_kb_left_debug
-  # TEST: standalone (no split), BLE off, USB-only, force-awake — isolate cursor lag
+  # TEST: standalone (no split), BLE off, USB-only, force-awake — sensor+keys+RGB
   - board: nice_nano//zmk
-    shield: nice_kb_test
-    artifact-name: nice_kb_test
-  # TEST+LOG: same, with USB serial logging (RGB strip init + phantom position)
+    shield: nkbtest
+    artifact-name: nkbtest
+  # TEST+LOG: same, with USB serial logging
   - board: nice_nano//zmk
-    shield: nice_kb_test
+    shield: nkbtest
     snippet: zmk-usb-logging
-    artifact-name: nice_kb_test_dbg
+    artifact-name: nkbtest_dbg
