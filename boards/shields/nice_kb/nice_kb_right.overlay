@@ -1,0 +1,17 @@
+#include "nice_kb.dtsi"
+
+/* Right = peripheral. Shift its columns to transform cols 6-11. */
+&default_transform {
+    col-offset = <6>;
+};
+
+&kscan0 {
+    col-gpios                                        /* same physical pins as left half */
+        = <&gpio0  2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* col1 P0.02 */
+        , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* col2 P0.29 */
+        , <&gpio0  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* col3 P0.09 (NFC) */
+        , <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* col4 P1.00 */
+        , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* col5 P0.11 */
+        , <&gpio1  4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* col6 P1.04 */
+        ;
+};
