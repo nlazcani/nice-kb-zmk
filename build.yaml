@@ -18,11 +18,14 @@ include:
     snippet: zmk-usb-logging
     artifact-name: nice_kb_left_debug
   # TEST: standalone (no split), BLE off, USB-only, force-awake — sensor+keys+RGB
+  # force KEYMAP_FILE: ZMK otherwise globs config/*.keymap and picks nice_kb.keymap
   - board: nice_nano//zmk
     shield: nkbtest
+    cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbtest.keymap
     artifact-name: nkbtest
   # TEST+LOG: same, with USB serial logging
   - board: nice_nano//zmk
     shield: nkbtest
     snippet: zmk-usb-logging
+    cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbtest.keymap
     artifact-name: nkbtest_dbg
