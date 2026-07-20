@@ -12,3 +12,8 @@ include:
   - board: nice_nano//zmk
     shield: settings_reset
     artifact-name: settings_reset
+  # DEBUG: USB serial logging to watch PMW3610 init + motion (flash to sensor half)
+  - board: nice_nano//zmk
+    shield: nice_kb_left
+    snippet: zmk-usb-logging
+    artifact-name: nice_kb_left_debug
