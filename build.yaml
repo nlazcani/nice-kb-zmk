@@ -1,13 +1,14 @@
 # ZMK cloud build matrix. Left = central (USB + ZMK Studio + trackball host).
+# Board is nice_nano//zmk (Zephyr 4.1 renamed nice_nano_v2 -> nice_nano@2.0.0//zmk).
 include:
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: nice_kb_left
     snippet: studio-rpc-usb-uart
     artifact-name: nice_kb_left
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: nice_kb_right
     artifact-name: nice_kb_right
   # flash this to wipe BLE bonds if pairing gets stuck
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: settings_reset
     artifact-name: settings_reset
