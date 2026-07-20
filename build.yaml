@@ -21,3 +21,8 @@ include:
   - board: nice_nano//zmk
     shield: nice_kb_test
     artifact-name: nice_kb_test
+  # TEST+LOG: same, with USB serial logging (RGB strip init + phantom position)
+  - board: nice_nano//zmk
+    shield: nice_kb_test
+    snippet: zmk-usb-logging
+    artifact-name: nice_kb_test_dbg
