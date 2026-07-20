@@ -3,3 +3,6 @@ config SHIELD_NICE_KB_LEFT
 
 config SHIELD_NICE_KB_RIGHT
 	def_bool $(shields_list_contains,nice_kb_right)
+
+config SHIELD_NICE_KB_TEST
+	def_bool $(shields_list_contains,nice_kb_test)

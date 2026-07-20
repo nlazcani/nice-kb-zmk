@@ -17,3 +17,7 @@ include:
     shield: nice_kb_left
     snippet: zmk-usb-logging
     artifact-name: nice_kb_left_debug
+  # TEST: standalone (no split), BLE off, USB-only, force-awake — isolate cursor lag
+  - board: nice_nano//zmk
+    shield: nice_kb_test
+    artifact-name: nice_kb_test

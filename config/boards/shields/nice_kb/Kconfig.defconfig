@@ -14,3 +14,10 @@ config ZMK_SPLIT
 	default y
 
 endif
+
+if SHIELD_NICE_KB_TEST
+
+config ZMK_KEYBOARD_NAME
+	default "nice_kb_test"
+
+endif # SHIELD_NICE_KB_TEST

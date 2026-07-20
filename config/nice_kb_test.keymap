@@ -1,0 +1,20 @@
+/* Sensor-only test keymap: all keys disabled so the bare (floating) matrix
+   produces NO phantom typing — clean cursor-lag measurement. */
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        default_layer {
+            display-name = "Test";
+            bindings = <
+   &none &none &none &none &none &none   &none &none &none &none &none &none
+   &none &none &none &none &none &none   &none &none &none &none &none &none
+   &none &none &none &none &none &none   &none &none &none &none &none &none
+   &none &none &none &none &none &none   &none &none &none &none &none &none
+   &none &none &none &none &none &none   &none &none &none &none &none &none
+            >;
+        };
+    };
+};
