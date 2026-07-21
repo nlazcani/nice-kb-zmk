@@ -13,9 +13,10 @@
         ;
 };
 
-/* keep sensor in RUN mode */
+/* keep sensor in RUN mode + fast 4ms (250Hz) sampling = low latency */
 &trackball {
     force-awake;
+    force-awake-4ms-mode;
 };
 
 /* ---- RGB: SK6812 (GRB) on P0.10 via WS2812-over-SPI on spi1 ---- */
