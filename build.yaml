@@ -21,6 +21,7 @@ include:
   # force KEYMAP_FILE: ZMK otherwise globs config/*.keymap and picks nice_kb.keymap
   - board: nice_nano//zmk
     shield: nkbtest
+    snippet: studio-rpc-usb-uart
     cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbtest.keymap
     artifact-name: nkbtest
   # TEST+LOG: same, with USB serial logging
