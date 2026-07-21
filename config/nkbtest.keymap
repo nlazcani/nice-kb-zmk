@@ -13,7 +13,7 @@
         default_layer {
             display-name = "Test";
             bindings = <
-   &kp A  &kp B  &kp C  &none &none &none   &none &none &none &none &none &none
+   &kp A  &kp B  &rgb_ug RGB_HUI  &none &none &none   &none &none &none &none &none &none
    &none  &none  &none  &none &none &none   &none &none &none &none &none &none
    &none  &none  &none  &none &none &none   &none &none &none &none &none &none
    &none  &none  &none  &none &none &none   &none &none &none &none &none &none
