@@ -1,6 +1,8 @@
-/* Scroll-snap test.
-   base: key0 = hold for scroll layer, key1/key2 = A/B, trackball = cursor.
-   scroll layer (1): trackball scrolls, axis-snapped. */
+/* Snap-scroll with cyclable sensitivity.
+   base: key0 = enter scroll mode (medium), key1 = studio_unlock, key2 = A.
+   scroll layers (=config): trackball scrolls (snapped); key1/key2 cycle speed:
+     key0 = exit to cursor,  key1 = slower,  key2 = faster.
+   L1=MED (1/2), L2=SLOW (1/4), L3=FAST (1/1). Enter at MED. */
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
@@ -9,9 +11,9 @@
         compatible = "zmk,keymap";
 
         base {
-            display-name = "Base";
+            display-name = "Cursor";
             bindings = <
-   &mo 1  &kp A &kp B  &none &none &none   &none &none &none &none &none &none
+   &to 1  &studio_unlock &kp A  &none &none &none   &none &none &none &none &none &none
    &none  &none &none  &none &none &none   &none &none &none &none &none &none
    &none  &none &none  &none &none &none   &none &none &none &none &none &none
    &none  &none &none  &none &none &none   &none &none &none &none &none &none
@@ -19,14 +21,36 @@
             >;
         };
 
-        scroll {
-            display-name = "Scroll";
+        scroll_med {    /* L1 */
+            display-name = "Scr-Med";
             bindings = <
-   &trans &trans &studio_unlock  &none &none &none   &none &none &none &none &none &none
-   &none  &none  &none   &none &none &none   &none &none &none &none &none &none
-   &none  &none  &none   &none &none &none   &none &none &none &none &none &none
-   &none  &none  &none   &none &none &none   &none &none &none &none &none &none
-   &none  &none  &none   &none &none &none   &none &none &none &none &none &none
+   &to 0  &to 2 &to 3  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+            >;
+        };
+
+        scroll_slow {   /* L2 - slowest */
+            display-name = "Scr-Slow";
+            bindings = <
+   &to 0  &none &to 1  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+            >;
+        };
+
+        scroll_fast {   /* L3 - fastest */
+            display-name = "Scr-Fast";
+            bindings = <
+   &to 0  &to 1 &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
             >;
         };
     };

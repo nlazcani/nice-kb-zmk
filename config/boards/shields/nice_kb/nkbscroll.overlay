@@ -20,11 +20,20 @@
     force-awake-4ms-mode;
 };
 
-/* add a scroll behaviour to the existing listener, active on layer 1 */
+/* 3 snap-scroll speed presets on 3 layers (scaler after snap so snap
+   thresholds see raw values). fast=1/1, med=1/2, slow=1/4. */
 &trackball_listener {
-    scroller {
+    s_med {
         layers = <1>;
-        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_snap>;
+        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_snap &zip_scroll_scaler 1 2>;
+    };
+    s_slow {
+        layers = <2>;
+        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_snap &zip_scroll_scaler 1 4>;
+    };
+    s_fast {
+        layers = <3>;
+        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_snap &zip_scroll_scaler 1 1>;
     };
 };
 
