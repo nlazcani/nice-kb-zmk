@@ -35,3 +35,10 @@ config ZMK_KEYBOARD_NAME
 	default "nkbinertia"
 
 endif # SHIELD_NKBINERTIA
+
+if SHIELD_NKBROTATE
+
+config ZMK_KEYBOARD_NAME
+	default "nkbrotate"
+
+endif # SHIELD_NKBROTATE

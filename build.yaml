@@ -42,3 +42,9 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbinertia.keymap
     artifact-name: nkbinertia
+  # ROTATE test: custom rotate module, angle presets cycled by key1/key2. + Studio.
+  - board: nice_nano//zmk
+    shield: nkbrotate
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbrotate.keymap
+    artifact-name: nkbrotate

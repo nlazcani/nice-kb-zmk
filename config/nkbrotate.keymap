@@ -1,0 +1,60 @@
+/* Rotation angle presets. key0 = studio_unlock, key1 = CCW (more -), key2 = CW (more +).
+   Layers: L0=0 L1=+5 L2=+10 L3=-5 L4=-10. Starts at 0. */
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        deg0 {
+            display-name = "0deg";
+            bindings = <
+   &studio_unlock &to 3 &to 1 &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+        degp5 {
+            display-name = "+5deg";
+            bindings = <
+   &studio_unlock &to 0 &to 2 &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+        degp10 {
+            display-name = "+10deg";
+            bindings = <
+   &studio_unlock &to 1 &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+        degm5 {
+            display-name = "-5deg";
+            bindings = <
+   &studio_unlock &to 4 &to 0 &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+        degm10 {
+            display-name = "-10deg";
+            bindings = <
+   &studio_unlock &none &to 3 &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+    };
+};

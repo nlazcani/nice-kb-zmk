@@ -22,5 +22,8 @@ manifest:
     - name: zmk-input-processor-scroll-inertia
       remote: nlazcani
       revision: main
+    - name: zmk-input-processor-rotate
+      remote: nlazcani
+      revision: main
   self:
     path: config
