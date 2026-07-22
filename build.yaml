@@ -33,6 +33,7 @@ include:
   # SCROLL test: scroll-snap (axis-lock). Hold key0 = scroll layer.
   - board: nice_nano//zmk
     shield: nkbscroll
+    snippet: studio-rpc-usb-uart
     cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbscroll.keymap
     artifact-name: nkbscroll
   # INERTIA test: forked scroll-inertia module ported to ZMK main. + Studio.
