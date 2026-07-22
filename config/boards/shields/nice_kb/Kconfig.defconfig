@@ -21,3 +21,10 @@ config ZMK_KEYBOARD_NAME
 	default "nkbtest"
 
 endif # SHIELD_NKBTEST
+
+if SHIELD_NKBSCROLL
+
+config ZMK_KEYBOARD_NAME
+	default "nkbscroll"
+
+endif # SHIELD_NKBSCROLL

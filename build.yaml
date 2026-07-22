@@ -30,3 +30,8 @@ include:
     snippet: zmk-usb-logging
     cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbtest.keymap
     artifact-name: nkbtest_dbg
+  # SCROLL test: scroll-snap (axis-lock). Hold key0 = scroll layer.
+  - board: nice_nano//zmk
+    shield: nkbscroll
+    cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbscroll.keymap
+    artifact-name: nkbscroll

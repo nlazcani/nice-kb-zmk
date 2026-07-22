@@ -6,3 +6,6 @@ config SHIELD_NICE_KB_RIGHT
 
 config SHIELD_NKBTEST
 	def_bool $(shields_list_contains,nkbtest)
+
+config SHIELD_NKBSCROLL
+	def_bool $(shields_list_contains,nkbscroll)
