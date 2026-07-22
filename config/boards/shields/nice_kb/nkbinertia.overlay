@@ -27,7 +27,7 @@
         #input-processor-cells = <0>;
         axis = <1>;               /* vertical */
         layer = <1>;              /* scroll layer */
-        scale = <4>;
+        scale = <40>;             /* ~10x sensitivity (was 4) */
         scale-div = <675>;
         swap-mod = <(MOD_LSFT|MOD_RSFT)>;   /* hold shift -> horizontal */
     };
@@ -40,7 +40,7 @@
             &zip_y_scaler (-1) 1
             &zip_xy_to_scroll_mapper
             &scroll_inertia_v
-            &zip_scroll_scaler 4 675
+            &zip_scroll_scaler 40 675
         >;
     };
 };
