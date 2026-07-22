@@ -23,18 +23,14 @@
 /* 3 snap-scroll speed presets on 3 layers (scaler after snap so snap
    thresholds see raw values). fast=1/1, med=1/2, slow=1/4. */
 &trackball_listener {
-    s_med {
-        layers = <1>;
-        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_snap &zip_scroll_scaler 1 2>;
-    };
-    s_slow {
-        layers = <2>;
-        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_snap &zip_scroll_scaler 1 4>;
-    };
-    s_fast {
-        layers = <3>;
-        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_snap &zip_scroll_scaler 1 1>;
-    };
+    /* 7 speed presets. layer N -> ratio (scaler after snap). */
+    s1 { layers = <1>; input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_snap &zip_scroll_scaler 1 1>;  };  /* 1/1  */
+    s2 { layers = <2>; input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_snap &zip_scroll_scaler 1 2>;  };  /* 1/2  */
+    s3 { layers = <3>; input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_snap &zip_scroll_scaler 1 4>;  };  /* 1/4  */
+    s4 { layers = <4>; input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_snap &zip_scroll_scaler 1 8>;  };  /* 1/8  */
+    s5 { layers = <5>; input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_snap &zip_scroll_scaler 1 12>; };  /* 1/12 */
+    s6 { layers = <6>; input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_snap &zip_scroll_scaler 1 16>; };  /* 1/16 */
+    s7 { layers = <7>; input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_snap &zip_scroll_scaler 1 20>; };  /* 1/20 */
 };
 
 /* optional snap tuning (defaults are fine to start) */

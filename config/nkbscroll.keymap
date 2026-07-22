@@ -1,56 +1,91 @@
-/* Snap-scroll with cyclable sensitivity.
-   base: key0 = enter scroll mode (medium), key1 = studio_unlock, key2 = A.
-   scroll layers (=config): trackball scrolls (snapped); key1/key2 cycle speed:
-     key0 = exit to cursor,  key1 = slower,  key2 = faster.
-   L1=MED (1/2), L2=SLOW (1/4), L3=FAST (1/1). Enter at MED. */
+/* Snap-scroll, 7 cyclable sensitivity presets.
+   base: key0 = enter scroll (starts 1/2), key1 = studio_unlock, key2 = A.
+   scroll layers: key0 = exit, key1 = slower, key2 = faster.
+   ratios (layer): L1=1/1 L2=1/2 L3=1/4 L4=1/8 L5=1/12 L6=1/16 L7=1/20 */
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
 / {
     keymap {
         compatible = "zmk,keymap";
-
         base {
             display-name = "Cursor";
             bindings = <
-   &to 1  &studio_unlock &kp A  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &to 2 &studio_unlock &kp A &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
             >;
         };
-
-        scroll_med {    /* L1 */
-            display-name = "Scr-Med";
+        s1_1_1 {
+            display-name = "1/1";
             bindings = <
-   &to 0  &to 2 &to 3  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &to 0 &to 2 &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
             >;
         };
-
-        scroll_slow {   /* L2 - slowest */
-            display-name = "Scr-Slow";
+        s2_1_2 {
+            display-name = "1/2";
             bindings = <
-   &to 0  &none &to 1  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &to 0 &to 3 &to 1 &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
             >;
         };
-
-        scroll_fast {   /* L3 - fastest */
-            display-name = "Scr-Fast";
+        s3_1_4 {
+            display-name = "1/4";
             bindings = <
-   &to 0  &to 1 &none  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
-   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &to 0 &to 4 &to 2 &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+        s4_1_8 {
+            display-name = "1/8";
+            bindings = <
+   &to 0 &to 5 &to 3 &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+        s5_1_12 {
+            display-name = "1/12";
+            bindings = <
+   &to 0 &to 6 &to 4 &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+        s6_1_16 {
+            display-name = "1/16";
+            bindings = <
+   &to 0 &to 7 &to 5 &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+        s7_1_20 {
+            display-name = "1/20";
+            bindings = <
+   &to 0 &none &to 6 &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
             >;
         };
     };
