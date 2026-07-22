@@ -35,8 +35,9 @@ include:
     shield: nkbscroll
     cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbscroll.keymap
     artifact-name: nkbscroll
-  # INERTIA test: forked scroll-inertia module ported to ZMK main.
+  # INERTIA test: forked scroll-inertia module ported to ZMK main. + Studio.
   - board: nice_nano//zmk
     shield: nkbinertia
+    snippet: studio-rpc-usb-uart
     cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbinertia.keymap
     artifact-name: nkbinertia
