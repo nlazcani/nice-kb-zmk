@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: kot149
       url-base: https://github.com/kot149
+    - name: nlazcani
+      url-base: https://github.com/nlazcani
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -17,5 +19,8 @@ manifest:
     - name: zmk-scroll-snap
       remote: kot149
       revision: v1
+    - name: zmk-input-processor-scroll-inertia
+      remote: nlazcani
+      revision: main
   self:
     path: config

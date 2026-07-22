@@ -1,0 +1,30 @@
+/* Inertia scroll test. base: key0 hold = scroll layer, key1/2 = A/B.
+   scroll layer(1): trackball = momentum scroll (vertical; Shift = horizontal). */
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        base {
+            display-name = "Base";
+            bindings = <
+   &mo 1  &kp A &kp B  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+   &none  &none &none  &none &none &none   &none &none &none &none &none &none
+            >;
+        };
+        scroll {
+            display-name = "Scroll";
+            bindings = <
+   &trans &trans &trans  &none &none &none   &none &none &none &none &none &none
+   &none  &none  &none   &none &none &none   &none &none &none &none &none &none
+   &none  &none  &none   &none &none &none   &none &none &none &none &none &none
+   &none  &none  &none   &none &none &none   &none &none &none &none &none &none
+   &none  &none  &none   &none &none &none   &none &none &none &none &none &none
+            >;
+        };
+    };
+};

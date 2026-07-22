@@ -9,3 +9,6 @@ config SHIELD_NKBTEST
 
 config SHIELD_NKBSCROLL
 	def_bool $(shields_list_contains,nkbscroll)
+
+config SHIELD_NKBINERTIA
+	def_bool $(shields_list_contains,nkbinertia)

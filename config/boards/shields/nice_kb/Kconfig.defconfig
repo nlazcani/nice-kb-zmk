@@ -28,3 +28,10 @@ config ZMK_KEYBOARD_NAME
 	default "nkbscroll"
 
 endif # SHIELD_NKBSCROLL
+
+if SHIELD_NKBINERTIA
+
+config ZMK_KEYBOARD_NAME
+	default "nkbinertia"
+
+endif # SHIELD_NKBINERTIA
