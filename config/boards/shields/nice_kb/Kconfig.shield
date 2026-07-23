@@ -33,3 +33,15 @@ config SHIELD_NKBTUNE_E
 
 config SHIELD_NKBTUNE_F
 	def_bool $(shields_list_contains,nkbtune_f)
+
+config SHIELD_NKBTUNE_600
+	def_bool $(shields_list_contains,nkbtune_600)
+
+config SHIELD_NKBTUNE_700
+	def_bool $(shields_list_contains,nkbtune_700)
+
+config SHIELD_NKBTUNE_800
+	def_bool $(shields_list_contains,nkbtune_800)
+
+config SHIELD_NKBTUNE_900
+	def_bool $(shields_list_contains,nkbtune_900)

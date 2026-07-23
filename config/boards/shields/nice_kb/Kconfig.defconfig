@@ -84,3 +84,31 @@ config ZMK_KEYBOARD_NAME
 	default "nkbtune_f"
 
 endif # SHIELD_NKBTUNE_F
+
+if SHIELD_NKBTUNE_600
+
+config ZMK_KEYBOARD_NAME
+	default "nkbtune_600"
+
+endif # SHIELD_NKBTUNE_600
+
+if SHIELD_NKBTUNE_700
+
+config ZMK_KEYBOARD_NAME
+	default "nkbtune_700"
+
+endif # SHIELD_NKBTUNE_700
+
+if SHIELD_NKBTUNE_800
+
+config ZMK_KEYBOARD_NAME
+	default "nkbtune_800"
+
+endif # SHIELD_NKBTUNE_800
+
+if SHIELD_NKBTUNE_900
+
+config ZMK_KEYBOARD_NAME
+	default "nkbtune_900"
+
+endif # SHIELD_NKBTUNE_900
