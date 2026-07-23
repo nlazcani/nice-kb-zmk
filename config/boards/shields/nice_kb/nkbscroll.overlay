@@ -18,6 +18,7 @@
 &trackball {
     force-awake;
     force-awake-4ms-mode;
+    spi-max-frequency = <2000000>;   /* SPI-freq TEST: 2MHz (vs 1MHz shared). compare jumps */
 };
 
 /* 3 snap-scroll speed presets on 3 layers (scaler after snap so snap
