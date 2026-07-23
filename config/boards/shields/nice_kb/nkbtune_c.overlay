@@ -1,0 +1,20 @@
+/* SPI/CPI tuning scenario: nkbtune_c -> SPI 750000 Hz, CPI 1000. Cursor only. */
+#include "nice_kb.dtsi"
+
+&kscan0 {
+    col-gpios
+        = <&gpio0  2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio0  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio1  4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        ;
+};
+
+&trackball {
+    force-awake;
+    force-awake-4ms-mode;
+    spi-max-frequency = <750000>;
+    cpi = <1000>;
+};

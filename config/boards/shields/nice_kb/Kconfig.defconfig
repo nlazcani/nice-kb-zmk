@@ -42,3 +42,45 @@ config ZMK_KEYBOARD_NAME
 	default "nkbrotate"
 
 endif # SHIELD_NKBROTATE
+
+if SHIELD_NKBTUNE_A
+
+config ZMK_KEYBOARD_NAME
+	default "nkbtune_a"
+
+endif # SHIELD_NKBTUNE_A
+
+if SHIELD_NKBTUNE_B
+
+config ZMK_KEYBOARD_NAME
+	default "nkbtune_b"
+
+endif # SHIELD_NKBTUNE_B
+
+if SHIELD_NKBTUNE_C
+
+config ZMK_KEYBOARD_NAME
+	default "nkbtune_c"
+
+endif # SHIELD_NKBTUNE_C
+
+if SHIELD_NKBTUNE_D
+
+config ZMK_KEYBOARD_NAME
+	default "nkbtune_d"
+
+endif # SHIELD_NKBTUNE_D
+
+if SHIELD_NKBTUNE_E
+
+config ZMK_KEYBOARD_NAME
+	default "nkbtune_e"
+
+endif # SHIELD_NKBTUNE_E
+
+if SHIELD_NKBTUNE_F
+
+config ZMK_KEYBOARD_NAME
+	default "nkbtune_f"
+
+endif # SHIELD_NKBTUNE_F

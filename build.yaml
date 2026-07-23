@@ -48,3 +48,39 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbrotate.keymap
     artifact-name: nkbrotate
+  # tune: SPI 250000 CPI 1000
+  - board: nice_nano//zmk
+    shield: nkbtune_a
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbtune.keymap
+    artifact-name: nkbtune_a
+  # tune: SPI 500000 CPI 1000
+  - board: nice_nano//zmk
+    shield: nkbtune_b
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbtune.keymap
+    artifact-name: nkbtune_b
+  # tune: SPI 750000 CPI 1000
+  - board: nice_nano//zmk
+    shield: nkbtune_c
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbtune.keymap
+    artifact-name: nkbtune_c
+  # tune: SPI 500000 CPI 600
+  - board: nice_nano//zmk
+    shield: nkbtune_d
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbtune.keymap
+    artifact-name: nkbtune_d
+  # tune: SPI 500000 CPI 1400
+  - board: nice_nano//zmk
+    shield: nkbtune_e
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbtune.keymap
+    artifact-name: nkbtune_e
+  # tune: SPI 500000 CPI 1800
+  - board: nice_nano//zmk
+    shield: nkbtune_f
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nkbtune.keymap
+    artifact-name: nkbtune_f

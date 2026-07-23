@@ -15,3 +15,21 @@ config SHIELD_NKBINERTIA
 
 config SHIELD_NKBROTATE
 	def_bool $(shields_list_contains,nkbrotate)
+
+config SHIELD_NKBTUNE_A
+	def_bool $(shields_list_contains,nkbtune_a)
+
+config SHIELD_NKBTUNE_B
+	def_bool $(shields_list_contains,nkbtune_b)
+
+config SHIELD_NKBTUNE_C
+	def_bool $(shields_list_contains,nkbtune_c)
+
+config SHIELD_NKBTUNE_D
+	def_bool $(shields_list_contains,nkbtune_d)
+
+config SHIELD_NKBTUNE_E
+	def_bool $(shields_list_contains,nkbtune_e)
+
+config SHIELD_NKBTUNE_F
+	def_bool $(shields_list_contains,nkbtune_f)
