@@ -1,12 +1,16 @@
 # ZMK cloud build matrix. Left = central (USB + ZMK Studio + trackball host).
 # Board is nice_nano//zmk (Zephyr 4.1 renamed nice_nano_v2 -> nice_nano@2.0.0//zmk).
 include:
+  # KEYMAP_FILE is forced on every nice_kb_* build: ZMK globs config/*.keymap
+  # and does NOT reliably prefer <shield>.keymap (see commit d28607c).
   - board: nice_nano//zmk
     shield: nice_kb_left
     snippet: studio-rpc-usb-uart
+    cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nice_kb.keymap
     artifact-name: nice_kb_left
   - board: nice_nano//zmk
     shield: nice_kb_right
+    cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nice_kb.keymap
     artifact-name: nice_kb_right
   # flash this to wipe BLE bonds if pairing gets stuck
   - board: nice_nano//zmk
@@ -16,6 +20,7 @@ include:
   - board: nice_nano//zmk
     shield: nice_kb_left
     snippet: zmk-usb-logging
+    cmake-args: -DKEYMAP_FILE=/__w/nice-kb-zmk/nice-kb-zmk/config/nice_kb.keymap
     artifact-name: nice_kb_left_debug
   # TEST: standalone (no split), BLE off, USB-only, force-awake — sensor+keys+RGB
   # force KEYMAP_FILE: ZMK otherwise globs config/*.keymap and picks nice_kb.keymap

@@ -1,47 +1,52 @@
 /*
- * PLACEHOLDER keymap for the 5x12 grid transform (60 positions).
- * Left = transform cols 0-5, Right = cols 6-11. Unused matrix cells = &none.
- * Refine live in ZMK Studio, or replace once the Cosmos matrix is exported.
+ * nice_kb TEST keymap — assembly validation, not a daily-driver layout.
+ *
+ * Every wired key sends a unique character so a matrix fault shows up as a
+ * specific missing/duplicated character in a text editor.
+ *
+ * Grid is the 5x12 placeholder transform: left = cols 0-5, right = cols 6-11.
+ *
+ * Left half (26 keys wired):        Right half (3 keys wired):
+ *   r1  1 2 3 4 5  .                  r1  Y U I . . .
+ *   r2  Q W E R T  .                  r2-r5 unwired
+ *   r3  A S D F G  .
+ *   r4  Z X C V B  .
+ *   r5  6 7 8 9 0  -   <- col6, the lone key: tap = "-", hold = fn layer
+ *
+ * Unwired matrix cells are &none.
  */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "Base";
+            display-name = "Test";
             bindings = <
-   &kp N1  &kp N2 &kp N3 &kp N4 &kp N5 &none      &none &kp N6 &kp N7 &kp N8    &kp N9  &kp N0
-   &kp Q   &kp W  &kp E  &kp R  &kp T  &none      &none &kp Y  &kp U  &kp I     &kp O   &kp P
-   &kp A   &kp S  &kp D  &kp F  &kp G  &none      &none &kp H  &kp J  &kp K     &kp L   &kp SEMI
-   &kp Z   &kp X  &kp C  &kp V  &kp B  &none      &none &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH
-   &none   &none  &kp LGUI &mo 1 &kp SPACE &kp LSHFT   &kp RSHFT &kp RET &mo 2 &kp RALT &none &none
+/* r1 */  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &none          &kp Y  &kp U  &kp I  &none  &none  &none
+/* r2 */  &kp Q   &kp W   &kp E   &kp R   &kp T   &none          &none  &none  &none  &none  &none  &none
+/* r3 */  &kp A   &kp S   &kp D   &kp F   &kp G   &none          &none  &none  &none  &none  &none  &none
+/* r4 */  &kp Z   &kp X   &kp C   &kp V   &kp B   &none          &none  &none  &none  &none  &none  &none
+/* r5 */  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &lt 1 MINUS    &none  &none  &none  &none  &none  &none
             >;
         };
 
-        lower_layer {
-            display-name = "Lower";
+        fn_layer {
+            display-name = "Fn";
+            /* Reached by holding the lone left col6 key (r5c6).
+               Right-half keys stay &trans so you can confirm the split link is
+               still alive while the layer is held: they keep typing Y U I. */
             bindings = <
-   &studio_unlock &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none   &none &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-   &bt BT_CLR     &trans       &trans       &trans       &trans       &none   &none &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans
-   &trans         &trans       &trans       &trans       &trans       &none   &none &trans &trans &trans &trans &trans
-   &trans         &trans       &trans       &trans       &trans       &none   &none &trans &trans &trans &trans &trans
-   &none &none &trans &trans &trans &trans   &trans &trans &trans &trans &none &none
-            >;
-        };
-
-        raise_layer {
-            display-name = "Raise";
-            bindings = <
-   &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCNT &none   &none &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR
-   &trans   &trans   &trans   &trans   &trans    &none   &none &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH
-   &trans   &trans   &trans   &trans   &trans    &none   &none &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE
-   &trans   &trans   &trans   &trans   &trans    &none   &none &trans    &trans    &trans    &trans   &kp GRAVE
-   &none &none &trans &trans &trans &trans   &trans &trans &trans &trans &none &none
+/* r1 */  &studio_unlock  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none    &trans  &trans  &trans  &none  &none  &none
+/* r2 */  &bt BT_CLR      &bt BT_CLR_ALL  &out OUT_TOG  &out OUT_USB  &out OUT_BLE  &none    &none   &none   &none   &none  &none  &none
+/* r3 */  &bootloader     &sys_reset      &none         &none         &none         &none    &none   &none   &none   &none  &none  &none
+/* r4 */  &none           &none           &none         &none         &none         &none    &none   &none   &none   &none  &none  &none
+/* r5 */  &trans          &trans          &trans        &trans        &trans        &trans   &none   &none   &none   &none  &none  &none
             >;
         };
     };

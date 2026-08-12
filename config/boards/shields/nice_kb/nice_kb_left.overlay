@@ -11,3 +11,10 @@
         , <&gpio1  4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* col6 P1.04 */
         ;
 };
+
+/* keep sensor in RUN mode + fast 4ms (250Hz) sampling = low latency
+   (same settings the nkbtest bench shield validated) */
+&trackball {
+    force-awake;
+    force-awake-4ms-mode;
+};

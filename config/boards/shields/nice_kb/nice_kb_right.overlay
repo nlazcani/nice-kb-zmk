@@ -5,6 +5,23 @@
     col-offset = <6>;
 };
 
+/*
+ * No trackball on this half. nice_kb.dtsi defines the PMW3610 on SPI0 because
+ * the bench-test shields need it; disable the whole chain here so the right
+ * half doesn't try to probe a sensor that isn't populated.
+ */
+&trackball_listener {
+    status = "disabled";
+};
+
+&trackball {
+    status = "disabled";
+};
+
+&spi0 {
+    status = "disabled";
+};
+
 &kscan0 {
     col-gpios                                        /* same physical pins as left half */
         = <&gpio0  2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* col1 P0.02 */
